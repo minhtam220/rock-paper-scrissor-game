@@ -26,10 +26,12 @@ const gameItems = [
   },
 ];
 
+
+
 export default function Main() {
-  const [result, setResult] = useState("N/N");
-  const [userGameItem, setUserGameItem] = useState(null);
-  const [computerGameItem, setComputerGameItem] = useState(null);
+  let [result, setResult] = useState("N/N");
+  let [userGameItem, setUserGameItem] = useState(null);
+  let [computerGameItem, setComputerGameItem] = useState(null);
 
   const handleGameItemChange = (gameItem) => {
     setUserGameItem({ ...gameItem });
@@ -44,17 +46,17 @@ export default function Main() {
   }, [userGameItem]);
 
   return (
-    <div className="conainer">
+    <div className="container">
       <div className="main">
         <Result
-          user1GameItem={"Your code here"}
-          user2GameItem={"Your code here"}
-          result={"Your code here"}
+          user1GameItem={userGameItem}
+          user2GameItem={computerGameItem}
+          result={result}
         />
         <Display />
-        <Choices
-          gameItems={"Your code here"}
-          handleGameItemChange={"Your code here"}
+        <Choices 
+          gameItems={gameItems} 
+          handleGameItemChange={handleGameItemChange}
         />
       </div>
     </div>

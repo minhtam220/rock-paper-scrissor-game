@@ -2,6 +2,7 @@ import React from "react";
 import ChoiceCard from "./ChoiceCard";
 
 function Choices({ gameItems, handleGameItemChange }) {
+
   return (
     <div>
       <h2 className="choices-title">Choices</h2>
@@ -10,12 +11,13 @@ function Choices({ gameItems, handleGameItemChange }) {
           <ChoiceCard
             key={gameItem.id}
             gameItem={gameItem}
-            handleGameItemChange={"Your code here"}
+            handleGameItemChange={handleGameItemChange}
           />
         ))}
       </div>
     </div>
   );
+
 }
 
 export default Choices;
